@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Switzerland Trip Cost from India 2025 | Budget Calculator | INR to CHF
+      Converter
+    </title>
+    <meta
+      name="description"
+      content="Calculate how much a Switzerland trip costs from India in 2025. Find daily expenses, accommodation costs, flight prices, and Swiss Travel Pass fees. Get live INR to CHF rates and budget vs luxury trip comparisons."
+    />
+    <meta
+      name="keywords"
+      content="Switzerland trip cost from India, Switzerland budget calculator India, INR to CHF today live rate, Switzerland travel cost estimator 2025, accommodation cost Switzerland per night, flights cost to Switzerland from India, daily expenses Switzerland for Indian travellers, Swiss Travel Pass cost India, visa fee Switzerland India, family trip cost Switzerland, cheapest months Switzerland travel, budget vs luxury Switzerland trip, 7-day Switzerland trip cost"
+    />
+    <meta name="author" content="Switzerland Trip Cost Estimator" />
+    <meta name="robots" content="index, follow" />
+    <meta name="google-site-verification" content="YOUR-GSC-META-TAG" />
+    <link rel="canonical" href="https://swiss-budget-estimator.example.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Switzerland Trip Cost Estimator" />
+    <meta
+      property="og:title"
+      content="Switzerland Trip Cost from India 2025 | Complete Budget Calculator & Cost Breakdown"
+    />
+    <meta
+      property="og:description"
+      content="✈️ Calculate Switzerland trip costs from India for 2025. Compare budget vs luxury options, get live INR to CHF rates, and find the best season to travel. Includes flight costs, accommodation, Swiss Travel Pass, and daily expenses!"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Switzerland Trip Budget Calculator 2025"
+    />
+    <meta
+      name="twitter:description"
+      content="Calculate your Switzerland trip costs from India. Get real-time INR to CHF conversion & detailed budget breakdown."
+    />
+    <meta
+      property="og:image"
+      content="https://swiss-budget-estimator.example.com/assets/hero.webp"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-IN"
+      href="https://swiss-budget-estimator.example.com/"
+    />
+    <link rel="preconnect" href="https://api.exchangerate.host" />
+
+    <!-- Critical CSS -->
+    <style>
+      .hero {
+        background: #f8f9fa;
+        padding: 2rem 0;
+        text-align: center;
+      }
+      .logo {
+        width: 64px;
+        height: 64px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      .card {
+        background: white;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Switzerland Trip Cost Calculator 2025",
+            "url": "https://swiss-budget-estimator.example.com/",
+            "description": "Calculate Switzerland trip cost from India with real-time INR to CHF rates. Compare flight costs, accommodation prices, and Swiss Travel Pass fees for 2025."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://swiss-budget-estimator.example.com/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does a 7-day trip to Switzerland cost from India?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A 7-day trip to Switzerland from India typically costs between ₹1,50,000 to ₹3,00,000 per person, including flights, accommodation, food, and local transport. Budget travelers can manage with ₹1,50,000, while luxury travelers might spend ₹5,00,000 or more."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the best time to visit Switzerland from India?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The best time to visit Switzerland from India is during summer (June-August) for warm weather and hiking, or winter (December-February) for skiing. Spring (March-May) and autumn (September-November) offer moderate weather and lower prices."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much spending money do I need per day in Switzerland?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Plan for CHF 100-200 (₹9,000-18,000) per day per person for food, local transport, and activities. Budget travelers can manage with CHF 75-100, while luxury travelers might spend CHF 300+ per day."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <img
+          src="assets/logo.svg"
+          alt="Switzerland Budget Calculator Logo"
+          class="logo"
+          width="80"
+          height="50"
+        />
+        <h1>Switzerland Trip Cost Estimator &amp; INR → CHF Converter</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <!-- Currency Converter -->
+        <section class="card">
+          <h2>Currency Converter</h2>
+          <form id="converter-form">
+            <div class="form-group">
+              <label for="inr-amount">Amount in INR</label>
+              <input
+                type="number"
+                id="inr-amount"
+                required
+                min="0"
+                step="100"
+              />
+            </div>
+            <button type="submit">Convert to CHF</button>
+            <div id="chf-result" aria-live="polite">
+              Example: ₹10,000 = CHF 110
+            </div>
+          </form>
+        </section>
+
+        <!-- Trip Budget Estimator -->
+        <section class="card">
+          <h2>Trip Budget Estimator</h2>
+          <form id="estimator-form">
+            <div class="form-group">
+              <label for="num-travelers">Number of Travelers</label>
+              <input
+                type="number"
+                id="num-travelers"
+                required
+                min="1"
+                max="10"
+                value="2"
+              />
+            </div>
+            <div class="form-group">
+              <label for="num-days">Number of Days</label>
+              <input
+                type="number"
+                id="num-days"
+                required
+                min="1"
+                max="30"
+                value="7"
+              />
+            </div>
+            <div class="form-group">
+              <label for="hotel-type">Hotel Category</label>
+              <select id="hotel-type" required>
+                <option value="budget">Budget</option>
+                <option value="mid-range" selected>Mid-range</option>
+                <option value="luxury">Luxury</option>
+              </select>
+            </div>
+            <button type="submit">Calculate Budget</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Results Area -->
+      <section
+        id="results-area"
+        class="card visually-hidden"
+        aria-live="polite"
+      >
+        <h2>Cost Breakdown</h2>
+        <table id="breakdown-table" class="results-table">
+          <tr>
+            <th>Category</th>
+            <th>Cost (INR)</th>
+            <th>Cost (CHF)</th>
+          </tr>
+        </table>
+        <button id="save-estimate" class="no-print">Save Estimate</button>
+      </section>
+
+      <!-- SEO Content -->
+      <article class="article">
+        <h2>
+          Complete Guide: Switzerland Trip Cost from India (2025) — Detailed
+          Budget Calculator & Money-Saving Tips
+        </h2>
+
+        <p>
+          Planning your dream Swiss vacation from India in 2025? Our
+          comprehensive Switzerland trip cost guide helps you calculate
+          everything from flights and hotels to daily expenses in both INR and
+          CHF. Use our real-time currency converter and budget calculator to
+          plan your perfect Swiss adventure.
+        </p>
+
+        <div class="quick-links">
+          <h3>Quick Navigation</h3>
+          <ul>
+            <li><a href="#flights">Flight Costs & Best Time to Book</a></li>
+            <li><a href="#accommodation">Where to Stay & Hotel Costs</a></li>
+            <li><a href="#daily-expenses">Daily Expense Breakdown</a></li>
+            <li><a href="#money-saving">Top Money-Saving Tips</a></li>
+            <li><a href="#sample-budget">Sample 7-Day Budget Plan</a></li>
+          </ul>
+        </div>
+
+        <h3>Flight Costs (India to Switzerland)</h3>
+        <p>
+          Direct flights from major Indian cities to Zurich or Geneva typically
+          cost between ₹45,000 to ₹75,000 per person round-trip. Book 3-4 months
+          in advance for the best rates. Consider shoulder season travel
+          (March-May or September-November) for better deals.
+        </p>
+
+        <h3>Accommodation Costs</h3>
+        <p>Switzerland offers various accommodation options:</p>
+        <ul>
+          <li>Budget: ₹7,000-10,000 per night (hostels, budget hotels)</li>
+          <li>Mid-range: ₹12,000-20,000 per night (3-star hotels)</li>
+          <li>Luxury: ₹25,000+ per night (4-5 star hotels)</li>
+        </ul>
+
+        <h3>Daily Expenses</h3>
+        <p>Plan for these daily costs per person:</p>
+        <ul>
+          <li>
+            Food: ₹3,000-5,000 (mix of restaurant meals and self-catered
+            options)
+          </li>
+          <li>Local Transport: ₹1,000-2,000 (public transport)</li>
+          <li>Activities: ₹2,000-8,000 (varies by activity)</li>
+        </ul>
+
+        <h3>Money-Saving Tips</h3>
+        <ul>
+          <li>Get a Swiss Travel Pass for unlimited public transport</li>
+          <li>Book accommodations in advance, especially during peak season</li>
+          <li>Consider staying in towns rather than major cities</li>
+          <li>Pack lunch for day trips</li>
+          <li>Look for city passes that include attractions and transport</li>
+        </ul>
+
+        <h3>Sample 7-Day Budget (Per Person)</h3>
+        <p>Here's a typical mid-range budget breakdown:</p>
+        <ul>
+          <li>Flights: ₹60,000</li>
+          <li>Accommodation: ₹84,000 (₹12,000 × 7 nights)</li>
+          <li>Food & Transport: ₹28,000 (₹4,000 × 7 days)</li>
+          <li>Activities & Misc: ₹28,000</li>
+          <li><strong>Total: ₹2,00,000 approximately</strong></li>
+        </ul>
+
+        <p>
+          Remember to factor in visa costs (₹8,000) and travel insurance
+          (₹2,000-5,000). Exchange rates can fluctuate, so keep a buffer of
+          10-15% in your budget.
+        </p>
+
+        <section class="faqs">
+          <h3>Frequently Asked Questions About Switzerland Trip Costs</h3>
+
+          <div class="faq-item">
+            <h4>
+              What is the best time to visit Switzerland from India to save
+              money?
+            </h4>
+            <p>
+              The shoulder seasons (March-May and September-November) offer the
+              best value. You'll find lower hotel rates and fewer tourists while
+              still enjoying good weather. Winter (December-February) is
+              expensive in ski resorts but cheaper in cities.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>How much spending money do I need per day in Switzerland?</h4>
+            <p>
+              Budget travelers should plan for CHF 100-150 (₹9,000-13,500) per
+              day, while mid-range travelers typically spend CHF 200-300
+              (₹18,000-27,000) daily. This includes meals, local transport, and
+              some activities.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>
+              Is Switzerland more expensive than other European countries?
+            </h4>
+            <p>
+              Yes, Switzerland is generally 20-30% more expensive than
+              neighboring European countries. However, the high quality of
+              services, efficient transport, and stunning landscapes make it
+              worth the investment.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h4>How can I save money on food in Switzerland?</h4>
+            <p>
+              Shop at supermarkets like Migros or Coop, use their restaurant
+              self-service sections, book hotels with breakfast included, and
+              carry water bottles to refill at Switzerland's many free water
+              fountains.
+            </p>
+          </div>
+        </section>
+
+        <section class="destination-costs">
+          <h3>Popular Swiss Destinations: Cost Comparison</h3>
+          <table class="costs-table">
+            <tr>
+              <th>City</th>
+              <th>Budget Hotel</th>
+              <th>Meal Cost</th>
+              <th>Daily Budget</th>
+            </tr>
+            <tr>
+              <td>Zurich</td>
+              <td>₹10,000+</td>
+              <td>₹2,000-4,000</td>
+              <td>₹15,000+</td>
+            </tr>
+            <tr>
+              <td>Geneva</td>
+              <td>₹9,000+</td>
+              <td>₹1,800-3,500</td>
+              <td>₹14,000+</td>
+            </tr>
+            <tr>
+              <td>Interlaken</td>
+              <td>₹8,000+</td>
+              <td>₹1,500-3,000</td>
+              <td>₹12,000+</td>
+            </tr>
+          </table>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem">
+            We help travelers plan their Swiss adventure with accurate cost
+            estimates and currency conversion tools.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Follow us on Twitter">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="18"
+                height="18"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Follow us on Instagram">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="18"
+                height="18"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+            <a href="#" aria-label="Follow us on LinkedIn">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="18"
+                height="18"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="/about.html">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  ></path>
+                </svg>
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/faq.html">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z"
+                  ></path>
+                </svg>
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="/blog/switzerland-travel-guide-2025.html">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M19 5v14H5V5h14zm0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"
+                  ></path>
+                </svg>
+                Travel Blog
+              </a>
+            </li>
+            <li>
+              <a href="/contact.html">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
+                  ></path>
+                </svg>
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li>
+              <a href="#" class="footer-link">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M21 14.2V6c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c.6 0 1.2-.3 1.6-.7l-4.5-4.5c-1.2.8-2.6 1.3-4.1 1.3-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7c0 1.5-.5 2.9-1.3 4.1l4.5 4.5c.4-.4.7-1 .7-1.6z"
+                  ></path>
+                </svg>
+                Currency Guide
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"
+                  ></path>
+                </svg>
+                Travel Guide
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"
+                  ></path>
+                  <path d="M7 12h2v5H7zm4-3h2v8h-2zm4-3h2v11h-2z"></path>
+                </svg>
+                Cost Analysis
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"
+                  ></path>
+                </svg>
+                Budget Tips
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem">
+            Get the latest Swiss travel tips and updates delivered to your
+            inbox.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              aria-label="Email for newsletter"
+              required
+            />
+            <button type="submit" aria-label="Subscribe to newsletter">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="currentColor"
+              >
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="made-with-love">
+          Made with
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="#ff4081"
+            style="margin: 0 4px"
+          >
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            />
+          </svg>
+          in India
+        </p>
+        <p>&copy; 2025 Switzerland Trip Cost Estimator. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Analytics Placeholder -->
+    <div data-analytics="deferred"></div>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>

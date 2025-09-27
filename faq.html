@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently Asked Questions | Switzerland Trip Cost Calculator</title>
+    <meta
+      name="description"
+      content="Get answers to common questions about Switzerland travel costs, currency conversion, best time to visit, and money-saving tips for Indian travelers."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="canonical"
+      href="https://swiss-budget-estimator.example.com/faq.html"
+    />
+    <style>
+      .faq-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .faq-item {
+        background: #ffffff;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .faq-question {
+        padding: 1.5rem;
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--swiss-blue);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .faq-question::after {
+        content: '+';
+        font-size: 1.5rem;
+        color: var(--swiss-red);
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-question::after {
+        transform: rotate(45deg);
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        opacity: 0;
+      }
+
+      .faq-item.active .faq-answer {
+        padding: 0 1.5rem 1.5rem;
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      .faq-answer p {
+        margin: 0;
+        line-height: 1.6;
+        color: #444;
+      }
+
+      .faq-answer ul {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+      }
+
+      .faq-answer li {
+        margin-bottom: 0.5rem;
+        color: #444;
+      }
+
+      .faq-section {
+        margin-bottom: 3rem;
+      }
+
+      .faq-section h2 {
+        color: var(--swiss-blue);
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .faq-section h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: var(--swiss-red);
+        margin: 1rem auto 0;
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <a href="/">
+        <img
+          src="assets/logo.svg"
+          alt="Switzerland Budget Calculator Logo"
+          class="logo"
+          width="64"
+          height="64"
+        />
+      </a>
+      <h1>Frequently Asked Questions</h1>
+    </header>
+
+    <main class="container">
+      <div class="faq-container">
+        <section class="faq-section">
+          <h2>Essential Travel FAQs</h2>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              How much should I budget for a Switzerland trip from India?
+            </h3>
+            <div class="faq-answer">
+              <p>A 7-day trip typically costs:</p>
+              <ul>
+                <li>
+                  <strong>Budget:</strong> ₹1,50,000 - ₹2,00,000 per person
+                </li>
+                <li>
+                  <strong>Mid-Range:</strong> ₹2,00,000 - ₹3,00,000 per person
+                </li>
+                <li><strong>Luxury:</strong> ₹3,00,000+ per person</li>
+              </ul>
+              <p>
+                This includes flights, accommodation, food, transport, and
+                activities.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              When is the best time to visit Switzerland?
+            </h3>
+            <div class="faq-answer">
+              <p>The best times to visit are:</p>
+              <ul>
+                <li>
+                  <strong>Summer (June-August):</strong> Perfect for hiking and
+                  sightseeing, but most expensive
+                </li>
+                <li>
+                  <strong>Spring (April-May):</strong> Moderate weather and
+                  better prices
+                </li>
+                <li>
+                  <strong>Fall (September-October):</strong> Beautiful colors
+                  and fewer tourists
+                </li>
+                <li>
+                  <strong>Winter (December-February):</strong> Ideal for skiing,
+                  but expensive in ski resorts
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What are the best ways to save money in Switzerland?
+            </h3>
+            <div class="faq-answer">
+              <ul>
+                <li>Book flights 3-4 months in advance</li>
+                <li>Stay in smaller towns instead of major cities</li>
+                <li>Get a Swiss Travel Pass for transportation</li>
+                <li>Cook some meals or try self-service restaurants</li>
+                <li>Use free walking tours and hiking trails</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              Do I need travel insurance for Switzerland?
+            </h3>
+            <div class="faq-answer">
+              <p>
+                Yes, travel insurance is strongly recommended and is required
+                for Schengen visa. It should cover:
+              </p>
+              <ul>
+                <li>Medical expenses (minimum €30,000 coverage)</li>
+                <li>Trip cancellation</li>
+                <li>Lost baggage</li>
+                <li>Emergency evacuation</li>
+              </ul>
+              <p>
+                Budget ₹2,000-5,000 for a comprehensive travel insurance policy.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What are the visa requirements and costs?
+            </h3>
+            <div class="faq-answer">
+              <p>For Indian citizens:</p>
+              <ul>
+                <li>Schengen visa fee: €80 (approximately ₹7,200)</li>
+                <li>Processing time: 15-20 days</li>
+                <li>
+                  Required documents: Flight bookings, hotel reservations,
+                  insurance, bank statements
+                </li>
+                <li>Valid passport with 6 months validity</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What are typical daily costs in Switzerland?
+            </h3>
+            <div class="faq-answer">
+              <p>Daily expenses typically include:</p>
+              <ul>
+                <li><strong>Meals:</strong> ₹3,000-5,000 per person</li>
+                <li>
+                  <strong>Local Transport:</strong> ₹1,000-2,000 per person
+                </li>
+                <li><strong>Activities:</strong> ₹2,000-8,000 per person</li>
+                <li><strong>Misc expenses:</strong> ₹1,000-2,000 per person</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <h3>What's the best time to visit Switzerland to save money?</h3>
+            <p>The most cost-effective times to visit are:</p>
+            <ul>
+              <li>
+                <strong>Spring (April-May)</strong>: Mild weather, fewer
+                tourists, lower hotel rates
+              </li>
+              <li>
+                <strong>Fall (September-October)</strong>: Beautiful colors,
+                pleasant weather, reduced prices
+              </li>
+              <li>
+                <strong>Avoid</strong>: Peak summer (July-August) and
+                Christmas/New Year period
+              </li>
+            </ul>
+          </div>
+
+          <div class="faq-item">
+            <h3>How much should I budget per day in Switzerland?</h3>
+            <p>Daily budget guidelines (excluding flights and hotels):</p>
+            <ul>
+              <li>Budget: CHF 100-150 (₹9,000-13,500)</li>
+              <li>Mid-range: CHF 200-300 (₹18,000-27,000)</li>
+              <li>Luxury: CHF 400+ (₹36,000+)</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="faq-section">
+          <h2>Currency & Payments</h2>
+
+          <div class="faq-item">
+            <h3>Should I carry Swiss Francs or can I use my Indian cards?</h3>
+            <p>It's recommended to:</p>
+            <ul>
+              <li>
+                Carry some cash in CHF for small purchases and emergencies
+              </li>
+              <li>Use international credit/debit cards for most payments</li>
+              <li>Inform your bank before travel</li>
+              <li>Consider getting a forex card for better rates</li>
+            </ul>
+          </div>
+
+          <div class="faq-item">
+            <h3>Where can I get the best INR to CHF exchange rates?</h3>
+            <p>For the best rates:</p>
+            <ul>
+              <li>Compare rates at multiple forex dealers in India</li>
+              <li>Consider getting a multi-currency forex card</li>
+              <li>Avoid exchanging at airports or tourist areas</li>
+              <li>Use our calculator to check current rates</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="faq-section">
+          <h2>Accommodation & Transport</h2>
+
+          <div class="faq-item">
+            <h3>What are the different types of accommodation available?</h3>
+            <p>Switzerland offers various options:</p>
+            <ul>
+              <li>Hostels: ₹3,000-5,000 per night</li>
+              <li>Budget Hotels: ₹7,000-10,000 per night</li>
+              <li>Mid-range Hotels: ₹12,000-20,000 per night</li>
+              <li>Luxury Hotels: ₹25,000+ per night</li>
+              <li>Apartments/Airbnb: ₹8,000-15,000 per night</li>
+            </ul>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is the Swiss Travel Pass worth it?</h3>
+            <p>The Swiss Travel Pass is worth it if you plan to:</p>
+            <ul>
+              <li>Visit multiple cities</li>
+              <li>Take scenic train routes</li>
+              <li>Use public transport frequently</li>
+              <li>Visit museums (many are included)</li>
+            </ul>
+            <p>Passes start from CHF 232 (₹21,000) for 3 days.</p>
+          </div>
+        </section>
+
+        <section class="faq-section">
+          <h2>Money-Saving Tips</h2>
+
+          <div class="faq-item">
+            <h3>How can I save money on food in Switzerland?</h3>
+            <ul>
+              <li>Shop at supermarkets like Migros or Coop</li>
+              <li>Book accommodations with kitchen facilities</li>
+              <li>Look for lunch specials at restaurants</li>
+              <li>Carry a reusable water bottle (tap water is safe)</li>
+              <li>Try self-service restaurants in department stores</li>
+            </ul>
+          </div>
+
+          <div class="faq-item">
+            <h3>What are the best free activities in Switzerland?</h3>
+            <ul>
+              <li>Walking tours in cities</li>
+              <li>Hiking trails</li>
+              <li>Public beaches at lakes</li>
+              <li>Window shopping in Zurich/Geneva</li>
+              <li>Free museums on specific days</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Switzerland Trip Cost Estimator. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Add click handlers to FAQ questions
+      document.querySelectorAll('.faq-question').forEach((question) => {
+        question.addEventListener('click', () => {
+          // Toggle active class on the parent item
+          const faqItem = question.parentElement;
+          const isActive = faqItem.classList.contains('active');
+
+          // Close all other items
+          document.querySelectorAll('.faq-item').forEach((item) => {
+            item.classList.remove('active');
+          });
+
+          // Toggle current item
+          if (!isActive) {
+            faqItem.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="128"
+  height="128"
+  viewBox="0 0 128 128"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <style>
+    .mountains { fill: #1f3a93; }
+    .snow { fill: #ffffff; }
+    .flag { fill: #ff0000; }
+    .cross { fill: #ffffff; }
+    .chf { fill: #2c3e50; font-family: Arial, sans-serif; font-weight: bold; }
+  </style>
+
+  <!-- Mountains with snow caps -->
+  <path class="mountains" d="M0,128 L40,68 L60,88 L85,43 L128,128 Z" />
+  <path
+    class="snow"
+    d="M40,68 L45,75 L35,75 Z M60,88 L65,95 L55,95 Z M85,43 L90,50 L80,50 Z"
+  />
+
+  <!-- Swiss flag in circle -->
+  <circle class="flag" cx="64" cy="45" r="25" />
+  <rect class="cross" x="54" y="35" width="20" height="20" />
+  <rect class="cross" x="59" y="30" width="10" height="30" />
+
+  <!-- CHF Symbol -->
+  <text class="chf" x="15" y="110" font-size="24">CHF</text>
+</svg>

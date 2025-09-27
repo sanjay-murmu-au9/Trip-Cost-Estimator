@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://swiss-budget-estimator.example.com/sitemap.xml
