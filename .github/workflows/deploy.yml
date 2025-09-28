@@ -15,7 +15,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repo
+      # Step 1: Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -38,16 +38,17 @@ jobs:
       - name: Copy index.html to 404.html
         run: cp dist/index.html dist/404.html
 
-      # Step 6: Upload the build folder as artifact for GitHub Pages
+      # Step 6: Upload the build folder as an artifact (using v4)
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: ./dist
 
       # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
 
-      # Step 8: Print the deployed URL
+      # Step 8: Show deployed URL in logs
       - name: Show GitHub Pages URL
         run: echo "Your site is deployed at https://${{ github.repository_owner }}.github.io/${{ github.repository }}/"
