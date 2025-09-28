@@ -15,40 +15,28 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
 
-      # Step 3: Install dependencies
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm ci
 
-      # Step 4: Build the project
       - name: Build
         run: npm run build
 
-      # Step 5: Copy index.html to 404.html for SPA routing
       - name: Copy index.html to 404.html
         run: cp dist/index.html dist/404.html
 
-      # Step 6: Upload the build folder as an artifact (using v4)
-      - name: Upload artifact for GitHub Pages
-        uses: actions/upload-artifact@v4
-        with:
-          name: github-pages
-          path: ./dist
-
-      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+        with:
+          artifact-path: ./dist
 
-      # Step 8: Show deployed URL in logs
       - name: Show GitHub Pages URL
         run: echo "Your site is deployed at https://${{ github.repository_owner }}.github.io/${{ github.repository }}/"
