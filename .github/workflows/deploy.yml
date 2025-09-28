@@ -40,8 +40,14 @@ jobs:
 
       # Step 6: Upload the build folder as artifact for GitHub Pages
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v2  # ✅ v2 is supported
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist
 
       # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+
+      # Step 8: Print the deployed URL
+      - name: Show GitHub Pages URL
+        run: echo "Your site is deployed at https://${{ github.repository_owner }}.github.io/${{ github.repository }}/"
