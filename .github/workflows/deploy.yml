@@ -30,7 +30,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 👇 Important: Fix React Router 404 on refresh
       - name: Copy index.html to 404.html
         run: cp dist/index.html dist/404.html
 
