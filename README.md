@@ -1,120 +1,73 @@
-# Switzerland Trip Cost Estimator
+# Welcome to your Lovable project
 
-An ultra-lite static website for estimating Switzerland trip costs from India and converting INR to CHF. Built with vanilla JavaScript, zero dependencies, and optimized for performance.
+## Project info
 
-## Features
+**URL**: https://lovable.dev/projects/5dbee41b-8abb-409d-85b8-d853ac5ee955
 
-- Currency conversion (INR → CHF)
-- Trip budget estimation
-- Cost breakdown by category
-- Local storage for saved estimates
-- SEO-optimized content
-- Responsive design
-- Accessibility-compliant
-- Under 100KB initial payload
+## How can I edit this code?
 
-## Deployment Instructions
+There are several ways of editing your application.
 
-### 1. GitHub Pages Setup
+**Use Lovable**
 
-1. Create a new repository on GitHub
-2. Clone the repository:
-   ```powershell
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
-   ```
-3. Copy all project files to the repository
-4. Push to GitHub:
-   ```powershell
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-5. Enable GitHub Pages:
-   - Go to repository Settings
-   - Navigate to "Pages" section
-   - Select "main" branch
-   - Click Save
+Simply visit the [Lovable Project](https://lovable.dev/projects/5dbee41b-8abb-409d-85b8-d853ac5ee955) and start prompting.
 
-### 2. Custom Domain Setup
+Changes made via Lovable will be committed automatically to this repo.
 
-1. Update CNAME file with your domain
-2. Add DNS records at your domain registrar:
-   - Type A: Point to GitHub Pages IPs
-     ```
-     185.199.108.153
-     185.199.109.153
-     185.199.110.153
-     185.199.111.153
-     ```
-   - Type CNAME: Create www record pointing to yourusername.github.io
+**Use your preferred IDE**
 
-### 3. Google Search Console Setup
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-1. Add your site to Google Search Console
-2. Choose domain or URL prefix property
-3. Verify ownership:
-   - Replace meta tag in index.html:
-     ```html
-     <meta name="google-site-verification" content="YOUR-GSC-META-TAG">
-     ```
-   - Commit and push changes
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### 4. Google Analytics Setup
+Follow these steps:
 
-1. Create GA4 property
-2. Get measurement ID
-3. Replace analytics placeholder:
-   ```html
-   <div data-analytics="deferred">
-     <!-- Paste GA4 snippet here -->
-   </div>
-   ```
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-## Development
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-### Local Testing
+# Step 3: Install the necessary dependencies.
+npm i
 
-1. Use a local server:
-   ```powershell
-   python -m http.server 8000
-   ```
-2. Open http://localhost:8000
-
-### API Rate Limits
-
-- Exchange rate API: https://api.exchangerate.host/
-- Free tier, no API key required
-- Fallback rates included in code
-
-### Updating Constants
-
-Edit DEFAULTS object in script.js:
-```javascript
-export const DEFAULTS = {
-  flightPerPersonINR: 60000,
-  hotelBudgetPerNightINR: 7000,
-  // ... other constants
-};
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-## Performance Optimization
+**Edit a file directly in GitHub**
 
-- Uses system fonts
-- Minimal CSS (no framework)
-- Vanilla JavaScript
-- SVG logo
-- WebP images
-- Lazy loading
-- Critical CSS inlined
-- Deferred scripts
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## Browser Support
+**Use GitHub Codespaces**
 
-- Modern browsers (last 2 versions)
-- No IE11 support
-- Progressive enhancement for API fallback
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## License
+## What technologies are used for this project?
 
-MIT License - Feel free to use and modify
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/5dbee41b-8abb-409d-85b8-d853ac5ee955) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

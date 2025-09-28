@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiss Alpine Design System - Colors inspired by Swiss mountains, lakes, and flag
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Swiss Alpine Color Palette */
+    --background: 210 30% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Swiss Flag Red */
+    --primary: 355 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Alpine Blue */
+    --secondary: 210 75% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Snow White with subtle blue tint */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Lake Blue accent */
+    --accent: 200 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 95%;
+    --ring: 355 85% 45%;
+
+    /* Swiss-inspired gradients */
+    --gradient-alpine: linear-gradient(135deg, hsl(210 75% 50%), hsl(200 85% 55%));
+    --gradient-mountain: linear-gradient(180deg, hsl(210 30% 98%), hsl(210 20% 96%));
+    --gradient-hero: linear-gradient(135deg, hsl(355 85% 45%), hsl(355 75% 55%));
+    
+    /* Elegant shadows */
+    --shadow-card: 0 4px 20px -2px hsl(215 25% 15% / 0.1);
+    --shadow-alpine: 0 10px 40px -10px hsl(200 85% 55% / 0.3);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode inspired by Swiss nights */
+    --background: 215 25% 8%;
+    --foreground: 210 30% 95%;
+
+    --card: 215 20% 12%;
+    --card-foreground: 210 30% 95%;
+
+    --popover: 215 20% 12%;
+    --popover-foreground: 210 30% 95%;
+
+    --primary: 355 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 75% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 15% 18%;
+    --muted-foreground: 215 10% 65%;
+
+    --accent: 200 85% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 15% 20%;
+    --input: 215 15% 18%;
+    --ring: 355 85% 55%;
+    
+    /* Dark gradients */
+    --gradient-alpine: linear-gradient(135deg, hsl(210 75% 40%), hsl(200 85% 45%));
+    --gradient-mountain: linear-gradient(180deg, hsl(215 25% 8%), hsl(215 15% 15%));
+    --gradient-hero: linear-gradient(135deg, hsl(355 85% 45%), hsl(355 75% 55%));
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  /* Custom gradient backgrounds */
+  .gradient-alpine {
+    background: var(--gradient-alpine);
+  }
+  
+  .gradient-mountain {
+    background: var(--gradient-mountain);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  /* Custom shadows */
+  .shadow-alpine {
+    box-shadow: var(--shadow-alpine);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Smooth animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
