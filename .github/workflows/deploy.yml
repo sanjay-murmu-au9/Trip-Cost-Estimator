@@ -21,7 +21,7 @@ jobs:
 
       # Setup Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
@@ -40,13 +40,13 @@ jobs:
 
       # Upload Pages artifact
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
       # Deploy Pages
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
 
       # Show deployed URL
       - name: Show GitHub Pages URL
