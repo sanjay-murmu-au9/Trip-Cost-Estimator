@@ -40,9 +40,7 @@ jobs:
 
       # Step 6: Upload the build folder as artifact for GitHub Pages
       - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
+        uses: actions/upload-pages-artifact@v1  # ✅ must be v1
 
       # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
