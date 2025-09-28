@@ -165,6 +165,42 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-card);
   }
   
+  /* Mobile-first responsive improvements */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Improve touch targets */
+    button, .btn, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better text readability on mobile */
+    body {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    
+    /* Prevent horizontal scroll */
+    html, body {
+      overflow-x: hidden;
+    }
+  }
+  
+  /* Touch-friendly interactions */
+  @media (hover: none) and (pointer: coarse) {
+    .hover\:scale-105:hover {
+      transform: none;
+    }
+    
+    button:active, .btn:active {
+      transform: scale(0.98);
+    }
+  }
+  
   /* Smooth animations */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
@@ -172,6 +208,10 @@ All colors MUST be HSL.
   
   .animate-slide-up {
     animation: slideUp 0.8s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
   
   @keyframes fadeIn {
@@ -188,5 +228,10 @@ All colors MUST be HSL.
       opacity: 1;
       transform: translateY(0);
     }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
   }
 }

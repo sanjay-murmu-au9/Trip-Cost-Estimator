@@ -1,14 +1,8 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://sanjay-murmu-au9.github.io/Trip-Cost-Estimator/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
