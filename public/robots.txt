@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://sanjay-murmu-au9.github.io/Trip-Cost-Estimator/sitemap.xml
+Sitemap: https://tripcostscalc.online/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 1

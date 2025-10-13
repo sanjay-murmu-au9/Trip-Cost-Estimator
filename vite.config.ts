@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: '/Trip-Cost-Estimator/',  // Add this for GitHub Pages
+  base: '/',  // Custom domain - no base path needed
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
