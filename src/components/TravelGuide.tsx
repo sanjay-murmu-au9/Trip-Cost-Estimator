@@ -322,7 +322,7 @@ export const TravelGuide = () => {
             <SwissButton 
               variant="outline" 
               size="lg"
-              onClick={() => window.open('/#/cost-guide', '_blank')}
+              onClick={() => window.open('/Trip-Cost-Estimator/#/cost-guide', '_blank')}
             >
               <MapPin className="w-5 h-5 mr-2" />
               Complete Cost Guide
