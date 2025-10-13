@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { CurrencyConverter } from "@/components/CurrencyConverter";
 import { TripBudgetCalculator } from "@/components/TripBudgetCalculator";
 import { TravelGuide } from "@/components/TravelGuide";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -31,6 +32,7 @@ const Index = () => {
       </section>
 
       <TravelGuide />
+      <Footer />
     </main>
   );
 };

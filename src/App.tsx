@@ -6,6 +6,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import { useVisitTracker } from "./hooks/useVisitTracker";
 import { AdminDashboard } from "./components/AdminDashboard";
 import Index from "./pages/Index";
+import CostGuide from "./pages/CostGuide";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const AppContent = () => {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/cost-guide" element={<CostGuide />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
