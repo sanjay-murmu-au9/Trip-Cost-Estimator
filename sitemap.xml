@@ -1,34 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://swiss-budget-estimator.example.com/</loc>
-    <lastmod>2025-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://tripcostscalc.online/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>1.00</priority>
   </url>
+
   <url>
-    <loc>https://swiss-budget-estimator.example.com/about.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://tripcostscalc.online/#/cost-guide</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.80</priority>
   </url>
+
+  <!-- add other pages similarly if you have them -->
+  <!-- Example:
   <url>
-    <loc>https://swiss-budget-estimator.example.com/faq.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://tripcostscalc.online/about</loc>
+    <lastmod>2025-01-27</lastmod>
+    <priority>0.60</priority>
   </url>
-  <url>
-    <loc
-    >https://swiss-budget-estimator.example.com/blog/switzerland-travel-guide-2025.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://swiss-budget-estimator.example.com/contact.html</loc>
-    <lastmod>2025-09-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  -->
+
 </urlset>
