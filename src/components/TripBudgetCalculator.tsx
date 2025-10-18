@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,10 +7,11 @@ import { SwissButton } from "@/components/ui/swiss-button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { PlaneTakeoff, MapPin, Utensils, Hotel } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useCountry } from "@/contexts/CountryContext";
 
 interface BudgetBreakdown {
   category: string;
-  costINR: number;
+  costLocal: number;
   costCHF: number;
   icon: React.ReactNode;
 }
@@ -20,16 +21,58 @@ export const TripBudgetCalculator = () => {
   const [days, setDays] = useState<string>("7");
   const [hotelCategory, setHotelCategory] = useState<string>("mid-range");
   const [breakdown, setBreakdown] = useState<BudgetBreakdown[]>([]);
-  const [totalINR, setTotalINR] = useState<number>(0);
+  const [totalLocal, setTotalLocal] = useState<number>(0);
   const [totalCHF, setTotalCHF] = useState<number>(0);
+  const { selectedCountry } = useCountry();
   const { toast } = useToast();
 
-  const exchangeRate = 0.011;
+  // Currency info
+  const currencies = {
+    india: { symbol: '₹', code: 'INR' },
+    usa: { symbol: '$', code: 'USD' }
+  };
+  
+  const currentCurrency = currencies[selectedCountry];
+  
+  // Reset breakdown when country changes
+  useEffect(() => {
+    setBreakdown([]);
+    setTotalLocal(0);
+    setTotalCHF(0);
+  }, [selectedCountry]);
 
+  // Hotel rates by country and category
   const hotelRates = {
-    budget: { inr: 8500, chf: 95 },
-    "mid-range": { inr: 16000, chf: 180 },
-    luxury: { inr: 30000, chf: 340 }
+    india: {
+      budget: { local: 8500, chf: 95 },
+      "mid-range": { local: 16000, chf: 180 },
+      luxury: { local: 30000, chf: 340 }
+    },
+    usa: {
+      budget: { local: 120, chf: 95 },
+      "mid-range": { local: 200, chf: 180 },
+      luxury: { local: 400, chf: 340 }
+    }
+  };
+  
+  // Flight costs by country (researched actual prices)
+  const flightCosts = {
+    india: { local: 60000, chf: 660 },
+    usa: { local: 900, chf: 828 }
+  };
+  
+  // Daily costs by country
+  const dailyCosts = {
+    india: {
+      food: { local: 4000, chf: 44 },
+      transport: { local: 1500, chf: 16.5 },
+      activities: { local: 5000, chf: 55 }
+    },
+    usa: {
+      food: { local: 48, chf: 44 },
+      transport: { local: 18, chf: 16.5 },
+      activities: { local: 60, chf: 55 }
+    }
   };
 
   const calculateBudget = () => {
@@ -45,67 +88,69 @@ export const TripBudgetCalculator = () => {
       return;
     }
 
-    const hotelRate = hotelRates[hotelCategory as keyof typeof hotelRates];
+    const hotelRate = hotelRates[selectedCountry][hotelCategory as keyof typeof hotelRates.india];
+    const flightCost = flightCosts[selectedCountry];
+    const dailyCost = dailyCosts[selectedCountry];
     
-    // Calculate costs per person per day
-    const flightCostINR = 60000; // Round trip flight cost
-    const flightCostCHF = flightCostINR * exchangeRate;
+    // Calculate costs
+    const flightCostLocal = flightCost.local;
+    const flightCostCHF = flightCost.chf;
     
-    const hotelCostINR = hotelRate.inr * numDays;
+    const hotelCostLocal = hotelRate.local * numDays;
     const hotelCostCHF = hotelRate.chf * numDays;
     
-    const foodCostINR = 4000 * numDays;
-    const foodCostCHF = foodCostINR * exchangeRate;
+    const foodCostLocal = dailyCost.food.local * numDays;
+    const foodCostCHF = dailyCost.food.chf * numDays;
     
-    const transportCostINR = 1500 * numDays;
-    const transportCostCHF = transportCostINR * exchangeRate;
+    const transportCostLocal = dailyCost.transport.local * numDays;
+    const transportCostCHF = dailyCost.transport.chf * numDays;
     
-    const activityCostINR = 5000 * numDays;
-    const activityCostCHF = activityCostINR * exchangeRate;
+    const activityCostLocal = dailyCost.activities.local * numDays;
+    const activityCostCHF = dailyCost.activities.chf * numDays;
 
     const newBreakdown: BudgetBreakdown[] = [
       {
         category: "Flights (Round Trip)",
-        costINR: flightCostINR * numTravelers,
+        costLocal: flightCostLocal * numTravelers,
         costCHF: flightCostCHF * numTravelers,
         icon: <PlaneTakeoff className="w-4 h-4" />
       },
       {
         category: `Accommodation (${numDays} nights)`,
-        costINR: hotelCostINR,
+        costLocal: hotelCostLocal,
         costCHF: hotelCostCHF,
         icon: <Hotel className="w-4 h-4" />
       },
       {
         category: "Food & Dining",
-        costINR: foodCostINR * numTravelers,
+        costLocal: foodCostLocal * numTravelers,
         costCHF: foodCostCHF * numTravelers,
         icon: <Utensils className="w-4 h-4" />
       },
       {
         category: "Local Transport",
-        costINR: transportCostINR * numTravelers,
+        costLocal: transportCostLocal * numTravelers,
         costCHF: transportCostCHF * numTravelers,
         icon: <MapPin className="w-4 h-4" />
       },
       {
         category: "Activities & Sightseeing",
-        costINR: activityCostINR * numTravelers,
+        costLocal: activityCostLocal * numTravelers,
         costCHF: activityCostCHF * numTravelers,
         icon: <MapPin className="w-4 h-4" />
       }
     ];
 
-    const calculatedTotalINR = newBreakdown.reduce((sum, item) => sum + item.costINR, 0);
+    const calculatedTotalLocal = newBreakdown.reduce((sum, item) => sum + item.costLocal, 0);
     const calculatedTotalCHF = newBreakdown.reduce((sum, item) => sum + item.costCHF, 0);
 
     setBreakdown(newBreakdown);
-    setTotalINR(calculatedTotalINR);
+    setTotalLocal(calculatedTotalLocal);
     setTotalCHF(calculatedTotalCHF);
 
     toast({
       title: "Budget Calculated!",
-      description: `Total estimated cost: ₹${calculatedTotalINR.toLocaleString()} (CHF ${calculatedTotalCHF.toFixed(2)})`,
+      description: `Total estimated cost: ${currentCurrency.symbol}${calculatedTotalLocal.toLocaleString()} (CHF ${calculatedTotalCHF.toFixed(2)})`,
     });
   };
 
@@ -154,9 +199,9 @@ export const TripBudgetCalculator = () => {
                   <SelectValue placeholder="Select hotel category" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="budget">Budget (₹8,500/night)</SelectItem>
-                  <SelectItem value="mid-range">Mid-range (₹16,000/night)</SelectItem>
-                  <SelectItem value="luxury">Luxury (₹30,000+/night)</SelectItem>
+                  <SelectItem value="budget">Budget ({currentCurrency.symbol}{hotelRates[selectedCountry].budget.local.toLocaleString()}/night)</SelectItem>
+                  <SelectItem value="mid-range">Mid-range ({currentCurrency.symbol}{hotelRates[selectedCountry]["mid-range"].local.toLocaleString()}/night)</SelectItem>
+                  <SelectItem value="luxury">Luxury ({currentCurrency.symbol}{hotelRates[selectedCountry].luxury.local.toLocaleString()}+/night)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -186,7 +231,7 @@ export const TripBudgetCalculator = () => {
                 <TableHeader>
                   <TableRow className="bg-muted">
                     <TableHead>Category</TableHead>
-                    <TableHead className="text-right">Cost (INR)</TableHead>
+                    <TableHead className="text-right">Cost ({currentCurrency.code})</TableHead>
                     <TableHead className="text-right">Cost (CHF)</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -200,7 +245,7 @@ export const TripBudgetCalculator = () => {
                         </div>
                       </TableCell>
                       <TableCell className="text-right font-semibold">
-                        ₹{item.costINR.toLocaleString()}
+                        {currentCurrency.symbol}{item.costLocal.toLocaleString()}
                       </TableCell>
                       <TableCell className="text-right font-semibold">
                         CHF {item.costCHF.toFixed(2)}
@@ -210,7 +255,7 @@ export const TripBudgetCalculator = () => {
                   <TableRow className="bg-primary/10 font-bold">
                     <TableCell className="font-bold text-lg">Total Estimated Cost</TableCell>
                     <TableCell className="text-right font-bold text-lg">
-                      ₹{totalINR.toLocaleString()}
+                      {currentCurrency.symbol}{totalLocal.toLocaleString()}
                     </TableCell>
                     <TableCell className="text-right font-bold text-lg">
                       CHF {totalCHF.toFixed(2)}

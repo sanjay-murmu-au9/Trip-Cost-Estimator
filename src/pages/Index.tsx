@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/HeroSection";
+import { CountrySelector } from "@/components/CountrySelector";
 import { CurrencyConverter } from "@/components/CurrencyConverter";
 import { TripBudgetCalculator } from "@/components/TripBudgetCalculator";
 import { TravelGuide } from "@/components/TravelGuide";
@@ -23,6 +24,8 @@ const Index = () => {
               Get accurate cost estimates for your Swiss adventure with our smart calculators
             </p>
           </div>
+          
+          <CountrySelector />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
             <CurrencyConverter />

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SwissButton } from "@/components/ui/swiss-button";
+import { useCountry } from "@/contexts/CountryContext";
 import { 
   Plane, 
   Hotel, 
@@ -16,17 +17,63 @@ import {
 } from "lucide-react";
 
 export const TravelGuide = () => {
+  const { selectedCountry } = useCountry();
+  
+  // Dynamic content based on country
+  const content = {
+    india: {
+      title: "Complete Switzerland Travel Guide 2025",
+      subtitle: "Everything you need to know for planning your perfect Swiss Alps vacation from India. From budget planning to money-saving tips, we've got you covered.",
+      flightText: "Direct flights from major Indian cities:",
+      flightRoutes: [
+        { route: "Delhi/Mumbai → Zurich", cost: "₹45,000-75,000" },
+        { route: "Connecting flights", cost: "₹35,000-60,000" }
+      ],
+      accommodation: [
+        { type: "Budget Hotels/Hostels", cost: "₹7,000-10,000" },
+        { type: "Mid-range Hotels", cost: "₹12,000-20,000" },
+        { type: "Luxury Hotels", cost: "₹25,000+" }
+      ],
+      dailyExpenses: [
+        { type: "Food & Dining", cost: "₹3,000-5,000" },
+        { type: "Local Transport", cost: "₹1,000-2,000" },
+        { type: "Activities", cost: "₹2,000-8,000" }
+      ],
+      visaInfo: "Valid passport (no visa required for Indians up to 90 days)"
+    },
+    usa: {
+      title: "Complete Switzerland Travel Guide 2025",
+      subtitle: "Everything you need to know for planning your perfect Swiss Alps vacation from USA. From budget planning to money-saving tips, we've got you covered.",
+      flightText: "Direct flights from major US cities:",
+      flightRoutes: [
+        { route: "NYC/Washington DC → Zurich", cost: "$800-1,200" },
+        { route: "West Coast → Zurich", cost: "$900-1,400" }
+      ],
+      accommodation: [
+        { type: "Budget Hotels/Hostels", cost: "$100-130" },
+        { type: "Mid-range Hotels", cost: "$180-250" },
+        { type: "Luxury Hotels", cost: "$400+" }
+      ],
+      dailyExpenses: [
+        { type: "Food & Dining", cost: "$40-60" },
+        { type: "Local Transport", cost: "$15-25" },
+        { type: "Activities", cost: "$50-100" }
+      ],
+      visaInfo: "Valid passport (no visa required for US citizens up to 90 days)"
+    }
+  };
+  
+  const currentContent = content[selectedCountry];
   return (
     <section className="py-16 px-4 bg-gradient-mountain">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Main Guide Header */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Complete Switzerland Travel Guide 2025
+            {currentContent.title}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to know for planning your perfect Swiss Alps vacation from India. 
-            From budget planning to money-saving tips, we've got you covered.
+            {currentContent.subtitle}
           </p>
         </div>
 
@@ -42,16 +89,14 @@ export const TravelGuide = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">Direct flights from major Indian cities:</p>
+                <p className="text-sm text-muted-foreground">{currentContent.flightText}</p>
                 <div className="space-y-1">
-                  <div className="flex justify-between">
-                    <span className="text-sm">Delhi/Mumbai → Zurich</span>
-                    <Badge variant="secondary">₹45,000-75,000</Badge>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm">Connecting flights</span>
-                    <Badge variant="secondary">₹35,000-60,000</Badge>
-                  </div>
+                  {currentContent.flightRoutes.map((flight, index) => (
+                    <div key={index} className="flex justify-between">
+                      <span className="text-sm">{flight.route}</span>
+                      <Badge variant="secondary">{flight.cost}</Badge>
+                    </div>
+                  ))}
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">
                   💡 Book 3-4 months in advance for best rates
@@ -70,18 +115,12 @@ export const TravelGuide = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">Budget Hotels/Hostels</span>
-                  <Badge variant="outline">₹7,000-10,000</Badge>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">Mid-range Hotels</span>
-                  <Badge variant="outline">₹12,000-20,000</Badge>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">Luxury Hotels</span>
-                  <Badge variant="outline">₹25,000+</Badge>
-                </div>
+                {currentContent.accommodation.map((hotel, index) => (
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-sm">{hotel.type}</span>
+                    <Badge variant="outline">{hotel.cost}</Badge>
+                  </div>
+                ))}
                 <p className="text-xs text-muted-foreground mt-2">
                   Per night rates. Consider Airbnb for longer stays.
                 </p>
@@ -99,18 +138,12 @@ export const TravelGuide = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">Food & Dining</span>
-                  <Badge variant="secondary">₹3,000-5,000</Badge>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">Local Transport</span>
-                  <Badge variant="secondary">₹1,000-2,000</Badge>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm">Activities</span>
-                  <Badge variant="secondary">₹2,000-8,000</Badge>
-                </div>
+                {currentContent.dailyExpenses.map((expense, index) => (
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-sm">{expense.type}</span>
+                    <Badge variant="secondary">{expense.cost}</Badge>
+                  </div>
+                ))}
                 <p className="text-xs text-muted-foreground mt-2">
                   Per person, per day. Mix restaurant meals with self-catering.
                 </p>
@@ -293,7 +326,7 @@ export const TravelGuide = () => {
             </CardHeader>
             <CardContent className="space-y-3">
               <ul className="space-y-2 text-sm">
-                <li>• Valid passport (no visa required for Indians up to 90 days)</li>
+                <li>• {currentContent.visaInfo}</li>
                 <li>• Travel insurance is mandatory</li>
                 <li>• Pack layers - weather can change quickly</li>
                 <li>• Comfortable walking shoes essential</li>
@@ -322,7 +355,10 @@ export const TravelGuide = () => {
             <SwissButton 
               variant="outline" 
               size="lg"
-              onClick={() => window.open('/#/cost-guide', '_blank')}
+              onClick={() => {
+                const guideUrl = selectedCountry === 'usa' ? '/#/cost-guide/us-visitor' : '/#/cost-guide';
+                window.open(guideUrl, '_blank');
+              }}
             >
               <MapPin className="w-5 h-5 mr-2" />
               Complete Cost Guide
