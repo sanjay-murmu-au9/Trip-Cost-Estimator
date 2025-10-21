@@ -363,6 +363,14 @@ export const TravelGuide = () => {
               <MapPin className="w-5 h-5 mr-2" />
               Complete Cost Guide
             </SwissButton>
+            <SwissButton 
+              variant="secondary" 
+              size="lg"
+              onClick={() => window.open('/#/blog', '_blank')}
+            >
+              <Camera className="w-5 h-5 mr-2" />
+              Travel Blog
+            </SwissButton>
           </div>
         </div>
       </div>

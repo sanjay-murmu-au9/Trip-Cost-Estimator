@@ -9,6 +9,8 @@ import { CountryProvider } from "./contexts/CountryContext";
 import Index from "./pages/Index";
 import CostGuide from "./pages/CostGuide";
 import CostGuideUS from "./pages/CostGuideUS";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const AppContent = () => {
             <Route path="/" element={<Index />} />
             <Route path="/cost-guide" element={<CostGuide />} />
             <Route path="/cost-guide/us-visitor" element={<CostGuideUS />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
