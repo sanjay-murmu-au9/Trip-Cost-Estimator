@@ -334,7 +334,7 @@ const blogPosts = {
     author: "Travel Expert",
     date: "January 12, 2025",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1527004760525-b2df7c1b8b8e?w=800&h=400&fit=crop",
+    image: "https://ik.imagekit.io/tripcostscalc/switzerland-trip-lake-view.jpeg?updatedAt=1761150005106&w=800&h=400&fit=crop",
     content: `
       <h2>When to Visit Switzerland for Best Value</h2>
       <p>Timing your Switzerland visit can save you thousands of rupees while ensuring the best experience. Here's a comprehensive guide to help you choose the perfect time.</p>
@@ -436,7 +436,7 @@ const BlogPost = () => {
       <div className="min-h-screen bg-gradient-mountain flex items-center justify-center">
         <Card className="max-w-md mx-auto">
           <CardContent className="text-center p-8">
-            <h2 className="text-2xl font-bold mb-4">Post Not Found</h2>
+            <h2 className="text-2xl font-bold mb-4">Under Testing Face</h2>
             <Button onClick={() => navigate('/blog')}>Back to Blog</Button>
           </CardContent>
         </Card>
