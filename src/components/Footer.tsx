@@ -5,23 +5,23 @@ export const Footer = () => {
   return (
     <footer className="py-12 px-4 bg-gradient-to-b from-background to-muted/30">
       <div className="max-w-6xl mx-auto space-y-8">
-        
+
         {/* Links & Resources */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="space-y-3">
             <h4 className="font-semibold text-primary">For Travelers</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="/#/cost-guide" className="text-muted-foreground hover:text-primary transition-colors">Complete Cost Guide</a></li>
-              <li><a href="/#calculator-section" className="text-muted-foreground hover:text-primary transition-colors">Trip Calculator</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Trip Calculator</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Currency Converter</a></li>
             </ul>
           </div>
-          
+
           <div className="space-y-3">
             <h4 className="font-semibold text-primary">For Bloggers & Partners</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a 
+                <a
                   href={`mailto:contact@example.com?subject=Partnership Inquiry&body=Hi, I'd like to collaborate or link to your Switzerland calculator.`}
                   className="text-muted-foreground hover:text-primary transition-colors flex items-center"
                 >
@@ -46,9 +46,9 @@ export const Footer = () => {
             <h4 className="font-semibold text-primary">Official Resources</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a 
-                  href="https://www.myswitzerland.com" 
-                  target="_blank" 
+                <a
+                  href="https://www.myswitzerland.com"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors flex items-center"
                 >
@@ -57,9 +57,9 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a 
-                  href="https://www.vfsglobal.ch/switzerland/india/" 
-                  target="_blank" 
+                <a
+                  href="https://www.vfsglobal.ch/switzerland/india/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors flex items-center"
                 >
