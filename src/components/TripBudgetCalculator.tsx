@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -31,9 +33,9 @@ export const TripBudgetCalculator = () => {
     india: { symbol: '₹', code: 'INR' },
     usa: { symbol: '$', code: 'USD' }
   };
-  
+
   const currentCurrency = currencies[selectedCountry];
-  
+
   // Reset breakdown when country changes
   useEffect(() => {
     setBreakdown([]);
@@ -54,13 +56,13 @@ export const TripBudgetCalculator = () => {
       luxury: { local: 400, chf: 340 }
     }
   };
-  
+
   // Flight costs by country (researched actual prices)
   const flightCosts = {
     india: { local: 60000, chf: 660 },
     usa: { local: 900, chf: 828 }
   };
-  
+
   // Daily costs by country
   const dailyCosts = {
     india: {
@@ -91,20 +93,20 @@ export const TripBudgetCalculator = () => {
     const hotelRate = hotelRates[selectedCountry][hotelCategory as keyof typeof hotelRates.india];
     const flightCost = flightCosts[selectedCountry];
     const dailyCost = dailyCosts[selectedCountry];
-    
+
     // Calculate costs
     const flightCostLocal = flightCost.local;
     const flightCostCHF = flightCost.chf;
-    
+
     const hotelCostLocal = hotelRate.local * numDays;
     const hotelCostCHF = hotelRate.chf * numDays;
-    
+
     const foodCostLocal = dailyCost.food.local * numDays;
     const foodCostCHF = dailyCost.food.chf * numDays;
-    
+
     const transportCostLocal = dailyCost.transport.local * numDays;
     const transportCostCHF = dailyCost.transport.chf * numDays;
-    
+
     const activityCostLocal = dailyCost.activities.local * numDays;
     const activityCostCHF = dailyCost.activities.chf * numDays;
 
@@ -154,8 +156,45 @@ export const TripBudgetCalculator = () => {
     });
   };
 
+  const exportToPdf = async () => {
+    try {
+      const el = document.getElementById('trip-budget-pdf-content');
+      if (!el) return;
+      const canvas = await html2canvas(el, { scale: 2, useCORS: true, backgroundColor: '#ffffff' });
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      // convert canvas px dimensions to mm for jsPDF (1px = 25.4/96 mm)
+      const pxToMm = 25.4 / 96;
+      const imageWidthMm = canvas.width * pxToMm;
+      const imageHeightMm = canvas.height * pxToMm;
+      const scale = pageWidth / imageWidthMm;
+      const imgWidth = pageWidth;
+      const imgHeight = imageHeightMm * scale;
+
+          let heightLeft = imgHeight;
+          let position = 0;
+
+          pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+
+          while (heightLeft > 0) {
+            position = position - pageHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+          }
+
+          pdf.save('trip-budget-estimate.pdf');
+    } catch (err) {
+      toast({ title: 'Export failed', description: 'Could not generate PDF', variant: 'destructive' });
+    }
+  };
+
   return (
-    <div className="w-full space-y-6">
+    <div id="trip-budget-pdf-content" className="w-full space-y-6">
+      {/* Wrapper for PDF export */}
       <Card className="shadow-card hover:shadow-alpine transition-all duration-300 animate-slide-up">
         <CardHeader className="text-center">
           <CardTitle className="text-xl flex items-center justify-center">
@@ -207,9 +246,9 @@ export const TripBudgetCalculator = () => {
             </div>
           </div>
 
-          <SwissButton 
-            onClick={calculateBudget} 
-            variant="alpine" 
+          <SwissButton
+            onClick={calculateBudget}
+            variant="alpine"
             className="w-full"
             size="lg"
           >
@@ -217,7 +256,7 @@ export const TripBudgetCalculator = () => {
             Calculate My Trip Budget
           </SwissButton>
         </CardContent>
-      </Card>
+    </Card>
 
       {breakdown.length > 0 && (
         <Card className="shadow-card animate-fade-in">
@@ -266,7 +305,7 @@ export const TripBudgetCalculator = () => {
             </div>
 
             <div className="mt-4 text-center">
-              <SwissButton variant="outline" size="lg">
+              <SwissButton variant="outline" size="lg" onClick={exportToPdf}>
                 Save This Estimate
               </SwissButton>
             </div>
