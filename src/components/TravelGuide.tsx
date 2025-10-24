@@ -2,13 +2,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { SwissButton } from "@/components/ui/swiss-button";
 import { useCountry } from "@/contexts/CountryContext";
-import { 
-  Plane, 
-  Hotel, 
-  Utensils, 
-  MapPin, 
-  Calendar, 
-  CreditCard, 
+import {
+  Plane,
+  Hotel,
+  Utensils,
+  MapPin,
+  Calendar,
+  CreditCard,
   Lightbulb,
   Train,
   Mountain,
@@ -18,7 +18,7 @@ import {
 
 export const TravelGuide = () => {
   const { selectedCountry } = useCountry();
-  
+
   // Dynamic content based on country
   const content = {
     india: {
@@ -62,7 +62,7 @@ export const TravelGuide = () => {
       visaInfo: "Valid passport (no visa required for US citizens up to 90 days)"
     }
   };
-  
+
   const currentContent = content[selectedCountry];
   return (
     <section className="py-16 px-4 bg-gradient-mountain">
@@ -269,7 +269,7 @@ export const TravelGuide = () => {
                 </p>
                 <Badge variant="outline" className="bg-accent/10">Budget Friendly</Badge>
               </div>
-              
+
               <div className="text-center space-y-2">
                 <h4 className="font-semibold text-primary">Summer (Jun-Aug)</h4>
                 <p className="text-sm text-muted-foreground">
@@ -277,7 +277,7 @@ export const TravelGuide = () => {
                 </p>
                 <Badge variant="outline" className="bg-primary/10">Peak Season</Badge>
               </div>
-              
+
               <div className="text-center space-y-2">
                 <h4 className="font-semibold text-accent">Autumn (Sep-Nov)</h4>
                 <p className="text-sm text-muted-foreground">
@@ -285,7 +285,7 @@ export const TravelGuide = () => {
                 </p>
                 <Badge variant="outline" className="bg-accent/10">Best Value</Badge>
               </div>
-              
+
               <div className="text-center space-y-2">
                 <h4 className="font-semibold text-secondary">Winter (Dec-Feb)</h4>
                 <p className="text-sm text-muted-foreground">
@@ -340,33 +340,33 @@ export const TravelGuide = () => {
         <div className="text-center space-y-4">
           <h3 className="text-2xl font-semibold">Ready to Plan Your Swiss Adventure?</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Use our comprehensive calculator above to estimate your exact trip costs and start planning 
+            Use our comprehensive calculator above to estimate your exact trip costs and start planning
             your unforgettable Switzerland experience today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <SwissButton 
-              variant="alpine" 
+            <SwissButton
+              variant="alpine"
               size="lg"
               onClick={() => document.getElementById('calculator-section')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Calculator className="w-5 h-5 mr-2" />
               Calculate My Trip Cost Now
             </SwissButton>
-            <SwissButton 
-              variant="outline" 
+            <SwissButton
+              variant="outline"
               size="lg"
               onClick={() => {
-                const guideUrl = selectedCountry === 'usa' ? '/#/cost-guide/us-visitor' : '/#/cost-guide';
+                const guideUrl = selectedCountry === 'usa' ? '/cost-guide/us-visitor' : '/cost-guide';
                 window.open(guideUrl, '_blank');
               }}
             >
               <MapPin className="w-5 h-5 mr-2" />
               Complete Cost Guide
             </SwissButton>
-            <SwissButton 
-              variant="secondary" 
+            <SwissButton
+              variant="secondary"
               size="lg"
-              onClick={() => window.open('/#/blog', '_blank')}
+              onClick={() => window.open('/blog', '_blank')}
             >
               <Camera className="w-5 h-5 mr-2" />
               Travel Blog

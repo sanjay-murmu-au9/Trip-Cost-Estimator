@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="space-y-3">
             <h4 className="font-semibold text-primary">For Travelers</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#/cost-guide" className="text-muted-foreground hover:text-primary transition-colors">Complete Cost Guide</a></li>
+              <li><a href="/cost-guide" className="text-muted-foreground hover:text-primary transition-colors">Complete Cost Guide</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Trip Calculator</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Currency Converter</a></li>
             </ul>
