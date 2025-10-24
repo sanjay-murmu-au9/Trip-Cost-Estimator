@@ -364,7 +364,7 @@ export const TravelGuide = () => {
               Complete Cost Guide
             </SwissButton>
             <SwissButton
-              variant="secondary"
+              variant="ghost"
               size="lg"
               onClick={() => window.open('/blog', '_blank')}
             >

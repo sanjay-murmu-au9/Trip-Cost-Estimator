@@ -16,7 +16,7 @@ const blogPosts = [
   {
     title: "Best Time to Visit Switzerland: Weather & Cost Analysis",
     excerpt: "Learn when to visit Switzerland for the best experience and budget. Compare seasonal costs, weather patterns, and tourist crowds.",
-    date: "January 2025", 
+    date: "January 2025",
     readTime: "6 min read",
     author: "Travel Expert",
     slug: "best-time-visit-switzerland-cost",
@@ -26,7 +26,7 @@ const blogPosts = [
     title: "Switzerland Visa for Indians: Complete Guide & Costs",
     excerpt: "Step-by-step Switzerland visa application guide for Indian citizens. Required documents, fees, processing time, and approval tips.",
     date: "January 2025",
-    readTime: "10 min read", 
+    readTime: "10 min read",
     author: "Visa Expert",
     slug: "switzerland-visa-indians-guide",
     image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop"
@@ -66,7 +66,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-mountain">
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <Button 
+        <Button
           variant="ghost" 
           onClick={() => navigate('/')}
           className="mb-6 hover:bg-white/10"
@@ -88,8 +88,8 @@ const Blog = () => {
           {blogPosts.map((post, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/95 backdrop-blur">
               <div className="aspect-video overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
@@ -121,8 +121,8 @@ const Blog = () => {
                 <p className="text-muted-foreground line-clamp-3 text-sm mb-4">
                   {post.excerpt}
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="w-full hover:bg-primary hover:text-white transition-colors"
                   onClick={() => navigate(`/blog/${post.slug}`)}
                 >
