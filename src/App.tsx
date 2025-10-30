@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ContactModalProvider } from "@/contexts/ContactModalContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useVisitTracker } from "./hooks/useVisitTracker";
 import { AdminDashboard } from "./components/AdminDashboard";
@@ -41,7 +42,9 @@ const AppContent = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AppContent />
+    <ContactModalProvider>
+      <AppContent />
+    </ContactModalProvider>
   </QueryClientProvider>
 );
 

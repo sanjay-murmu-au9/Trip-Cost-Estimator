@@ -1,6 +1,8 @@
 import { Mail, ExternalLink } from "lucide-react";
+import { useContactModal } from '@/contexts/ContactModalContext'
 
 export const Footer = () => {
+  const { openContactModal } = useContactModal()
 
   return (
     <footer className="py-12 px-4 bg-gradient-to-b from-background to-muted/30">
@@ -21,13 +23,13 @@ export const Footer = () => {
             <h4 className="font-semibold text-primary">For Bloggers & Partners</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a
-                  href={`mailto:contact@example.com?subject=Partnership Inquiry&body=Hi, I'd like to collaborate or link to your Switzerland calculator.`}
+                <button
+                  onClick={() => openContactModal()}
                   className="text-muted-foreground hover:text-primary transition-colors flex items-center"
                 >
                   <Mail className="w-3 h-3 mr-1" />
                   Partnership Inquiries
-                </a>
+                </button>
               </li>
               <li>
                 <span className="text-muted-foreground text-xs">
