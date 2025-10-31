@@ -14,6 +14,7 @@ type Props = {
 
 export default function ContactModal({ open, onClose }: Props) {
   const [name, setName] = useState('')
+  const [nameError, setNameError] = useState<string | null>(null)
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState<string | null>(null)
   const [organization, setOrganization] = useState('')
@@ -38,6 +39,7 @@ export default function ContactModal({ open, onClose }: Props) {
   // ✅ Handle form submission
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if(!name) return setNameError('Name is required')
     if (!email) return setEmailError('Email is required')
     if (!validateEmail(email)) return setEmailError('Please enter a valid email address')
     if (!message) return window.alert('Please provide a short message')
@@ -100,9 +102,16 @@ export default function ContactModal({ open, onClose }: Props) {
             <input
               className="w-full rounded-md border px-3 py-2"
               placeholder="Your name"
+              required
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => {
+                setName(e.target.value)
+                if (!e.target.value) setNameError('Name is required')
+                else setNameError(null)}}
             />
+            {nameError && (
+                <p className="text-sm text-red-600 mt-1">{nameError}</p>
+              )}
 
             <div>
               <input
@@ -125,6 +134,7 @@ export default function ContactModal({ open, onClose }: Props) {
             <input
               className="w-full rounded-md border px-3 py-2"
               placeholder="Organization (optional)"
+              required
               value={organization}
               onChange={(e) => setOrganization(e.target.value)}
             />
