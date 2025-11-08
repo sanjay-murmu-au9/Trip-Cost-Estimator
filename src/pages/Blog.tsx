@@ -17,10 +17,10 @@ const blogPosts = [
     title: "Best Time to Visit Switzerland: Weather & Cost Analysis",
     excerpt: "Learn when to visit Switzerland for the best experience and budget. Compare seasonal costs, weather patterns, and tourist crowds.",
     date: "January 2025",
-    readTime: "6 min read",
+    readTime: "8 min read",
     author: "Travel Expert",
     slug: "best-time-visit-switzerland-cost",
-    image: "https://images.unsplash.com/photo-1527004760525-b2df7c1b8b8e?w=400&h=250&fit=crop"
+    image: "https://ik.imagekit.io/tripcostscalc/switzerland-trip-lake-view.jpeg?updatedAt=1761150005106&w=800&h=400&fit=crop"
   },
   {
     title: "Switzerland Visa for Indians: Complete Guide & Costs",
@@ -67,7 +67,7 @@ const Blog = () => {
     <div className="min-h-screen bg-gradient-mountain">
       <div className="max-w-6xl mx-auto px-4 py-8">
         <Button
-          variant="ghost" 
+          variant="ghost"
           onClick={() => navigate('/')}
           className="mb-6 hover:bg-white/10"
         >
