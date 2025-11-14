@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { HeroSection } from "@/components/HeroSection";
 import { CountrySelector } from "@/components/CountrySelector";
 import { CurrencyConverter } from "@/components/CurrencyConverter";
@@ -7,6 +8,20 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
+    <>
+      <Helmet>
+        <title>Switzerland Trip Cost Calculator 2025 | Swiss Travel Budget Planner | INR to CHF Converter</title>
+        <meta
+          name="description"
+          content="🇨🇭 Calculate Switzerland trip cost from India 2025! FREE budget planner for Indians - get accurate costs for 7-10 day Switzerland tours, visa, flights, hotels in INR. Compare Delhi, Mumbai, Bangalore departure costs."
+        />
+        <meta
+          name="keywords"
+          content="Switzerland trip cost from India, Switzerland travel cost India 2025, cost to visit Switzerland from India, Switzerland tour cost for Indians, Switzerland holiday cost from India"
+        />
+        <link rel="canonical" href="https://tripcostscalc.online/" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
     <main className="min-h-screen">
       <HeroSection />
       
@@ -36,7 +51,8 @@ const Index = () => {
 
       <TravelGuide />
       <Footer />
-    </main>
+      </main>
+    </>
   );
 };
 

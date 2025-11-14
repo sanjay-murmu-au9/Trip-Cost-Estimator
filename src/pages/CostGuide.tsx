@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SwissButton } from "@/components/ui/swiss-button";
@@ -7,7 +8,37 @@ import { Footer } from "@/components/Footer";
 
 const CostGuide = () => {
   return (
-    <main className="min-h-screen bg-gradient-mountain">
+    <>
+      <Helmet>
+        <title>Switzerland Trip Cost from India 2025 | Detailed Budget Breakdown</title>
+        <meta
+          name="description"
+          content="Complete Switzerland trip cost breakdown from India 2025. Detailed budget guide for visa, flights, hotels, food, and activities with real prices in INR."
+        />
+        <meta
+          name="keywords"
+          content="Switzerland trip cost India 2025, cost breakdown, visa cost, flight cost, hotel cost, food cost, detailed budget, INR breakdown"
+        />
+        <link rel="canonical" href="https://tripcostscalc.online/cost-guide" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://tripcostscalc.online/cost-guide" />
+        <meta property="og:title" content="Switzerland Trip Cost from India 2025 | Budget Breakdown" />
+        <meta
+          property="og:description"
+          content="Detailed cost breakdown for Switzerland trip from India - visa, flights, accommodation, food, and activities in INR."
+        />
+        <meta property="og:image" content="https://tripcostscalc.online/og-image.jpg" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://tripcostscalc.online/cost-guide" />
+        <meta property="twitter:title" content="Switzerland Trip Cost Breakdown 2025" />
+        <meta
+          property="twitter:description"
+          content="Complete budget guide with real prices for Switzerland travel from India"
+        />
+        <meta property="twitter:image" content="https://tripcostscalc.online/og-image.jpg" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+      <main className="min-h-screen bg-gradient-mountain">
       {/* Header */}
       <section className="py-8 px-4">
         <div className="max-w-4xl mx-auto">
@@ -376,7 +407,8 @@ const CostGuide = () => {
         </div>
       </section>
       <Footer />
-    </main>
+      </main>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from "react-helmet-async";
 import { ContactModalProvider } from "@/contexts/ContactModalContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useVisitTracker } from "./hooks/useVisitTracker";
@@ -41,11 +42,13 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ContactModalProvider>
-      <AppContent />
-    </ContactModalProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <ContactModalProvider>
+        <AppContent />
+      </ContactModalProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;
